@@ -23,55 +23,58 @@ class Graphics(object):
         venus = turtle.Turtle()
         venus.shape('circle')
         venus.write("venus")
-        venus.color('purple')
+        venus.color('white')
         venus.penup()
 
         earth = turtle.Turtle()
         earth.shape('circle')
-        earth.shapesize(2,2)
+        earth.shapesize(2, 2)
         earth.write("earth")
-        earth.color('blue')
+        earth.color('white')
         earth.penup()
 
         mars = turtle.Turtle()
         mars.shape('circle')
         mars.write("mars")
-        mars.color('red')
+        mars.color('white')
         mars.penup()
 
         turtles = {'mercury': mercury, 'venus': venus, 'earth': earth, 'mars': mars}
         self.start_animation(turtles)
 
-
-
     def start_animation(self, turtles):
 
-        win = turtle.Screen()
-        win.bgpic('GUI/media/background.gif')
-        win.setup(800, 800)
-        win.tracer(0)
+        screen = turtle.Screen()
+        screen.title("Solar System")
+        screen.setup(800, 800)
+        screen.bgpic('GUI/media/background.gif')
 
         sun = turtle.Turtle()
-        sun.color('black')
-        sun.shape('circle')
-        sun.shapesize(5, 5)
-        sun.color('yellow')
+        screen.addshape("GUI/media/sun.gif")
+        screen.addshape("GUI/media/earth.gif")
+        screen.addshape("GUI/media/mars.gif")
+        screen.addshape("GUI/media/venus.gif")
+        screen.addshape("GUI/media/mercury.gif")
+        screen.addshape("GUI/media/moon.gif")
+        sun.shape("GUI/media/sun.gif")
+        turtles['earth'].shape("GUI/media/earth.gif")
+        turtles['mars'].shape("GUI/media/mars.gif")
+        turtles['venus'].shape("GUI/media/venus.gif")
+        turtles['mercury'].shape("GUI/media/mercury.gif")
 
         moon = turtle.Turtle()
-        moon.color('white')
-        moon.shape('circle')
-        moon.color('gray')
+        moon.shape("GUI/media/moon.gif")
         moon.penup()
 
         angle_moon = 0
         radius_moon = 40
 
-        while(True):
-            win.update()
+        while (True):
+            screen.update()
             for planet in self.system.get_planets().values():
                 pair = planet.move()
-                if(planet.get_name() in turtles.keys()):
-                    turtles[planet.name].goto(sun.xcor()+pair[0], sun.ycor()+pair[1])
+                if (planet.get_name() in turtles.keys()):
+                    turtles[planet.name].goto(sun.xcor() + pair[0], sun.ycor() + pair[1])
                     planet.angle += planet.factor
                     turtles[planet.name].pendown()
 
@@ -79,10 +82,5 @@ class Graphics(object):
 
             x = radius_moon * math.cos(angle_moon)
             y = radius_moon * math.sin(angle_moon)
-            moon.goto(turtles['earth'].xcor()+x, turtles['earth'].ycor()+y)
-            time.sleep(0.02)
-
-
-
-
-
+            moon.goto(turtles['earth'].xcor() + x, turtles['earth'].ycor() + y)
+            time.sleep(0.01)
