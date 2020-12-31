@@ -1,9 +1,7 @@
 # Space Simulator
 
 The interactive Space Simulator is made up of all the planets that orbit our sun.
-
 Of course, the simulation is inaccurate since the distances between the planets and their sizes are unrealistic.
-
 The motion was created using the following equations:
 
 ![](https://latex.codecogs.com/gif.latex?x%20%3D%20radius%28planet%29%20%5Ccdot%20%5Ccos%28angle%28planet%29%29)
