@@ -17,6 +17,8 @@ class Planet(object):
         self.angle = 0
         self.following_star = None
         self.factor = 0
+        self.image = ""
+        self.velocity = 0
 
     def set_average_distance_from_sun(self, distance: int):
         self.avg_dist_from_sun = distance
@@ -54,6 +56,9 @@ class Planet(object):
     def set_factor(self, fact):
         self.factor = fact
 
+    def set_velocity(self, speed:float):
+        self.velocity = speed
+
     def __str__(self):
         return f"~~~~ {self.name} ~~~~\n" \
                f"Average distance from the sun: {self.avg_dist_from_sun}\n" \
@@ -73,3 +78,8 @@ class Planet(object):
 
     def get_name(self) -> str:
         return self.name
+
+    def distanceToTheSun(self):
+        return self.avg_dist_from_sun
+
+

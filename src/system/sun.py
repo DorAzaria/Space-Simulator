@@ -7,6 +7,7 @@ class TheSun(object):
         self.self_loop = 25
         self.temperature = 5511
         self.color = 'red'
+        self.image = "GUI/media/sun.gif"
 
     def __str__(self):
         return f"!~!~!~!~!~ {self.name.title()} !~!~!~!~!~\n" \

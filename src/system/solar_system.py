@@ -37,8 +37,9 @@ class SolarSystem(object):
         planet.set_self_loop(58.6462)
         planet.set_average_temperature(166)
         planet.set_color('gray')
-        planet.set_radius(110)
+        planet.set_radius(80)
         planet.set_factor(0.05)
+        planet.image = "GUI/media/mercury.gif"
         return planet
 
     @staticmethod
@@ -52,8 +53,9 @@ class SolarSystem(object):
         planet.set_self_loop(243.0185)
         planet.set_average_temperature(463)
         planet.set_color('white')
-        planet.set_radius(180)
+        planet.set_radius(120)
         planet.set_factor(0.03)
+        planet.image = "GUI/media/venus.gif"
         return planet
 
     @staticmethod
@@ -67,8 +69,9 @@ class SolarSystem(object):
         planet.set_self_loop(23.934)
         planet.set_average_temperature(14)
         planet.set_color('blue')
-        planet.set_radius(300)
+        planet.set_radius(160)
         planet.set_factor(0.01)
+        planet.image = "GUI/media/earth.gif"
         return planet
 
     @staticmethod
@@ -82,8 +85,9 @@ class SolarSystem(object):
         planet.set_self_loop(24.6229)
         planet.set_average_temperature(-63)
         planet.set_color('red')
-        planet.set_radius(500)
+        planet.set_radius(200)
         planet.set_factor(0.007)
+        planet.image = "GUI/media/mars.gif"
         return planet
 
     @staticmethod
@@ -96,7 +100,10 @@ class SolarSystem(object):
         planet.set_number_of_moons(79)
         planet.set_self_loop(10)
         planet.set_average_temperature(-121)
+        planet.set_radius(300)
+        planet.set_factor(0.005)
         planet.set_color('orange')
+        planet.image = "GUI/media/jupiter.gif"
         return planet
 
     @staticmethod
@@ -109,7 +116,10 @@ class SolarSystem(object):
         planet.set_number_of_moons(82)
         planet.set_self_loop(10)
         planet.set_average_temperature(-130)
+        planet.set_radius(350)
+        planet.set_factor(0.003)
         planet.set_color('yellow')
+        planet.image = "GUI/media/saturn.gif"
         return planet
 
     @staticmethod
@@ -122,7 +132,10 @@ class SolarSystem(object):
         planet.set_number_of_moons(27)
         planet.set_self_loop(17)
         planet.set_average_temperature(-220)
+        planet.set_radius(400)
+        planet.set_factor(0.002)
         planet.set_color('azure')
+        planet.image = "GUI/media/uranus.gif"
         return planet
 
     @staticmethod
@@ -136,4 +149,7 @@ class SolarSystem(object):
         planet.set_self_loop(16)
         planet.set_average_temperature(-212)
         planet.set_color('blue')
+        planet.set_radius(450)
+        planet.set_factor(0.001)
+        planet.image = "GUI/media/neptune.gif"
         return planet
