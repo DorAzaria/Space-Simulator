@@ -1,7 +1,5 @@
-from solar_system import SolarSystem
 from spacecraft import Spacecraft
 import math
-import numpy
 
 
 class HohmannTransferOrbit(object):
@@ -20,7 +18,7 @@ class HohmannTransferOrbit(object):
         earth_distance_to_sun = self.mission['earth'].distanceToTheSun()
         mars_distance_to_sun = self.mission['mars'].distanceToTheSun()
 
-        #  the vis-viva equation
+        #  the vis-viva equation - velocity of the target orbit
         mu = 3.986
         avg_distance = (earth_distance_to_sun + mars_distance_to_sun) / 2
         self.mission['earth'].set_velocity(math.sqrt(mu * ((2 / earth_distance_to_sun) - (1 / avg_distance))))
