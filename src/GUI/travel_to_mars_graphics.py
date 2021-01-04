@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from matplotlib.ticker import (AutoMinorLocator, MultipleLocator)
+import matplotlib.animation as animation
 
 
 class TravelToMarsGraphics(object):
@@ -10,8 +11,11 @@ class TravelToMarsGraphics(object):
         # self.spacecraft = hohmann.spacecraft
         self.init_scales()
 
-    @staticmethod
-    def init_scales():
+    def animate(self, i):
+        hehe = plt.plot(3,4)
+        return hehe
+
+    def init_scales(self):
         fig, ax = plt.subplots(figsize=(10, 8))
         plt.plot(0, 0, "D-")
         plt.annotate("sun", (0, 0.1))
@@ -37,4 +41,5 @@ class TravelToMarsGraphics(object):
         # differently.
         ax.grid(which='major', color='#CCCCCC', linestyle='--')
         ax.grid(which='minor', color='#CCCCCC', linestyle=':')
+        anim = animation.FuncAnimation(fig, self.animate, frames=365, interval=55)
         plt.show()

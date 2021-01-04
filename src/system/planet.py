@@ -20,44 +20,6 @@ class Planet(object):
         self.image = ""
         self.velocity = 0
 
-    def set_average_distance_from_sun(self, distance: int):
-        self.avg_dist_from_sun = distance
-
-    def set_aphelion(self, aph: int):
-        self.aphelion = aph
-
-    def set_perihelion(self, per: int):
-        self.perihelion = per
-
-    def set_orbital_period(self, orbital: float):
-        self.orbital_period = orbital
-
-    def set_number_of_moons(self, moons: int):
-        self.number_of_moons = moons
-
-    def set_self_loop(self, loops: float):
-        self.self_loop = loops
-
-    def set_average_temperature(self, temp: int):
-        self.avg_temperature = temp
-
-    def set_color(self, c: str):
-        self.color = c
-
-    def set_radius(self, rad: int):
-        self.radius = rad
-
-    def set_angle(self, ang: int):
-        self.angle = ang
-
-    def set_following_star(self, following):
-        self.following_star = following
-
-    def set_factor(self, fact):
-        self.factor = fact
-
-    def set_velocity(self, speed:float):
-        self.velocity = speed
 
     def __str__(self):
         return f"~~~~ {self.name} ~~~~\n" \
