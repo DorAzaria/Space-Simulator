@@ -29,22 +29,7 @@ class SolarSystem(object):
         new_planets = {}
         with open(file_name, "r") as f:
             dict_lot = json.load(f)
-            for k, v in dict_lot.items():
-                planet = Planet(k)
-                planet.name = k
-                planet.avg_dist_from_sun = v['avg_dist_from_sun']
-                planet.aphelion = v['aphelion']
-                planet.perihelion = v['perihelion']
-                planet.orbital_period = v['orbital_period']
-                planet.number_of_moons = v['number_of_moons']
-                planet.self_loop = v['self_loop']
-                planet.avg_temperature = v['avg_temperature']
-                planet.color = v['color']
-                planet.radius = v['radius']
-                planet.angle = v['angle']
-                planet.following_star = v['following_star']
-                planet.factor = v['factor']
-                planet.image = v['image']
-                planet.velocity = v['velocity']
-                new_planets[k] = planet
+            for v in dict_lot.values():
+                planet = Planet(v)
+                new_planets[v['name']] = planet
         self.planets = new_planets

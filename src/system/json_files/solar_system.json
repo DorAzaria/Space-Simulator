@@ -14,7 +14,8 @@
         "following_star": null,
         "factor": 0.05,
         "image": "GUI/media/mercury.gif",
-        "velocity": 0
+        "velocity": 0,
+        "mu": 2.203
     },
     "venus": {
         "name": "venus",
@@ -31,7 +32,8 @@
         "following_star": null,
         "factor": 0.03,
         "image": "GUI/media/venus.gif",
-        "velocity": 0
+        "velocity": 0,
+        "mu" : 3.248
     },
     "earth": {
         "name": "earth",
@@ -48,7 +50,8 @@
         "following_star": null,
         "factor": 0.01,
         "image": "GUI/media/earth.gif",
-        "velocity": 0
+        "velocity": 0,
+        "mu" : 3.986
     },
     "mars": {
         "name": "mars",
@@ -65,7 +68,8 @@
         "following_star": null,
         "factor": 0.007,
         "image": "GUI/media/mars.gif",
-        "velocity": 0
+        "velocity": 0,
+        "mu" : 4.282
     },
     "jupiter": {
         "name": "jupiter",
@@ -82,7 +86,8 @@
         "following_star": null,
         "factor": 0.005,
         "image": "GUI/media/jupiter.gif",
-        "velocity": 0
+        "velocity": 0,
+        "mu": 1.266
     },
     "saturn": {
         "name": "saturn",
@@ -99,7 +104,8 @@
         "following_star": null,
         "factor": 0.003,
         "image": "GUI/media/saturn.gif",
-        "velocity": 0
+        "velocity": 0,
+        "mu": 3.793
     },
     "uranus": {
         "name": "uranus",
@@ -116,7 +122,8 @@
         "following_star": null,
         "factor": 0.002,
         "image": "GUI/media/uranus.gif",
-        "velocity": 0
+        "velocity": 0,
+        "mu": 5.793
     },
     "neptune": {
         "name": "neptune",
@@ -133,6 +140,7 @@
         "following_star": null,
         "factor": 0.001,
         "image": "GUI/media/neptune.gif",
-        "velocity": 0
+        "velocity": 0,
+        "mu": 6.836
     }
 }

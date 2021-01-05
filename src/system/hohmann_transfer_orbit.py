@@ -1,6 +1,8 @@
 from spacecraft import Spacecraft
 import math
 
+from src.system.planet import Planet
+
 
 class HohmannTransferOrbit(object):
 
@@ -15,11 +17,13 @@ class HohmannTransferOrbit(object):
         self.range = 0
 
     def init(self):
-        earth_distance_to_sun = self.mission['earth'].avg_dist_from_sun
-        mars_distance_to_sun = self.mission['mars'].avg_dist_from_sun
-
+        earth = self.mission['earth']
+        mars = self.mission['mars']
         #  the vis-viva equation - velocity of the target orbit
-        mu = 3.986
-        avg_distance = (earth_distance_to_sun + mars_distance_to_sun) / 2
-        self.mission['earth'].velocity = math.sqrt(mu * ((2 / earth_distance_to_sun) - (1 / avg_distance)))
-        self.mission['mars'].velocity = math.sqrt(mu * ((2 / mars_distance_to_sun) - (1 / avg_distance)))
+        earth.velocity = self.vis_viva_equation(earth, mars)
+        mars.velocity = self.vis_viva_equation(mars, earth)
+
+    @staticmethod
+    def vis_viva_equation(source: Planet, destination: Planet) -> float:
+        a = (source.avg_dist_from_sun + destination.avg_dist_from_sun) / 2
+        return math.sqrt(source.mu * ((2 / source.avg_dist_from_sun) - (1 / a)))
